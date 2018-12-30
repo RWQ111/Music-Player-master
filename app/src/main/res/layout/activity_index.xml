@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--带列表的首页，有列表、播放按钮、当前音乐信息、播放模式（未完善）-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.administrator.music_player.Activity.MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/settingBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:layout_alignParentTop="true">
+        <EditText
+            android:id="@+id/search_text"
+            android:layout_width="180sp"
+            android:layout_height="30sp"
+            android:textSize="26sp"
+            android:textColor="#000000"
+            android:background="#FFFFFF"
+            android:hint="请搜索歌曲"
+            android:layout_marginLeft="10sp"
+            android:layout_centerVertical="true"/>
+        <ImageButton
+            android:id="@+id/search_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_search"
+            android:layout_toRightOf="@+id/search_text"
+            android:layout_marginLeft="10sp"/>
+
+        <ImageButton
+            android:id="@+id/close_clock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:background="@drawable/clock"
+            android:layout_toLeftOf="@+id/setting"
+            android:layout_marginRight="15sp"/>
+
+        <ImageButton
+            android:id="@+id/setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_setting"
+            android:layout_alignParentRight="true"/>
+
+
+    </RelativeLayout>
+    <ListView
+        android:id="@+id/index_listView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/settingBar"
+        android:layout_alignParentStart="true">
+
+    </ListView>
+    <ListView
+        android:id="@+id/setting_listView"
+        android:layout_width="120sp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/settingBar"
+        android:layout_alignParentRight="true"
+        android:visibility="gone">
+
+
+    </ListView>
+
+    <LinearLayout
+        android:id="@+id/playingBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background ="@color/black">
+       <ImageButton
+           android:id="@+id/playModele"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:background="@drawable/button_loop"
+           android:layout_marginLeft="10dp"
+           android:layout_marginRight="30dp"/>
+
+        <ImageButton
+            android:id="@+id/index_playOrPause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_play_index"/>
+        <android.support.v4.widget.Space
+            android:layout_width="30sp"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/index_title"
+                android:layout_width="180sp"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="#FFFFFF"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:singleLine="true" />
+            <TextView
+                android:id="@+id/index_artist"
+                android:layout_width="180sp"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:singleLine="true" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
